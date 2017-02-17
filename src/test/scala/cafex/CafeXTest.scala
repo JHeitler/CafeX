@@ -27,19 +27,19 @@ class CafeXTest extends Specification {
 
   "CalculteBillWithServiceCharge should" >> {
     "Correctly calculate the bill if only drinks" >> {
-      cafe.calculateBillWithServiceChrge(List("Cola", "Cola", "Coffee")) must_== BigDecimal(2.00)
+      cafe.calculateBillWithServiceCharge(List("Cola", "Cola", "Coffee")) must_== BigDecimal(2.00)
     }
 
     "Correctly calcuylate the bill with only drinks and cold food" >> {
-      cafe.calculateBillWithServiceChrge(List("Cola", "Cola", "Cheese Sandwich", "Coffee", "Cheese Sandwich")) must_== BigDecimal(6.60)
+      cafe.calculateBillWithServiceCharge(List("Cola", "Cola", "Cheese Sandwich", "Coffee", "Cheese Sandwich")) must_== BigDecimal(6.60)
     }
 
     "Correctly calculate the bill if hot food is included" >> {
-      cafe.calculateBillWithServiceChrge(List("Cola", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich")) must_== BigDecimal(10.20)
+      cafe.calculateBillWithServiceCharge(List("Cola", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich")) must_== BigDecimal(10.20)
     }
 
     "Ensure the tip does not go above £20" >> {
-      cafe.calculateBillWithServiceChrge(List("Cola", "Steak Sandwich", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich",
+      cafe.calculateBillWithServiceCharge(List("Cola", "Steak Sandwich", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich",
         "Cola", "Steak Sandwich", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich",
         "Cola", "Steak Sandwich", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich",
         "Cola", "Steak Sandwich", "Cola", "Steak Sandwich", "Coffee", "Cheese Sandwich",
@@ -53,7 +53,7 @@ class CafeXTest extends Specification {
     }
 
     "Round the tip to 2dp" >> {
-      cafe.calculateBillWithServiceChrge(List("Surprise of the day")) must_== BigDecimal(15.13)
+      cafe.calculateBillWithServiceCharge(List("Surprise of the day")) must_== BigDecimal(15.13)
     }
   }
 }

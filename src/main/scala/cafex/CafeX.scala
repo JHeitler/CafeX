@@ -14,6 +14,8 @@ class CafeX {
        ● Steak Sandwich - Hot - £4.50
    */
 
+  // Maps menu items to (price, service charge)
+  // Note the largest service charge encountered will be aplied to the bill
   val menu = Map(
     ("Cola" -> (BigDecimal(0.50), BigDecimal(0.0))),
     ("Coffee" -> (BigDecimal(1.0), BigDecimal(0.0))),
@@ -26,7 +28,7 @@ class CafeX {
     items.flatMap(menu.get).foldLeft(BigDecimal(0.0))((soFar, current) => soFar + current._1)
   }
 
-  def calculateBillWithServiceChrge(items: List[String]) = {
+  def calculateBillWithServiceCharge(items: List[String]) = {
     // Get the item cost
     val itemTotal = calculateBill(items)
     // find the tip to apply
